@@ -5,10 +5,7 @@ import com.cydeo.service.RoleService;
 import com.cydeo.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/user")
@@ -42,6 +39,25 @@ public class userController {
     // model.addAttribute("users", userService.findAll());
 
         return "redirect:/user/create";
+
+    }
+    // I need username so I will get it from view html then sent it to GetMapping below
+    @GetMapping("/update/{username}") // path variable, specific user will come, so go to map bring the user to UI
+    public String editUser(@PathVariable("username") String username, Model model){   //from the browser I will catch user name and bring it  to my java code.
+
+       //work here
+        //define the .attribute
+        //user ---> attribute I need to pass information to view
+        // roles ---> I need to bind this information as well
+        // users --> need to bind
+
+        model.addAttribute("user", new UserDTO());
+        model.addAttribute("roles",roleService.findAll());
+        model.addAttribute("users", userService.findAll());
+
+
+        return "/user/update";
+                // from UI to view then carry it to code
 
     }
 }
