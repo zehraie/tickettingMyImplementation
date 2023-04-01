@@ -8,22 +8,20 @@ import com.cydeo.enums.Status;
 import com.cydeo.service.ProjectService;
 import com.cydeo.service.RoleService;
 import com.cydeo.service.UserService;
-import com.cydeo.service.impl.RoleServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
 
 @Component
-public class DateGenerater implements CommandLineRunner {
+public class DataGenerater implements CommandLineRunner {
 
     RoleService roleService;
     UserService userService;
     ProjectService projectService;
 
-    public DateGenerater(RoleService roleService, UserService userService, ProjectService projectService) {
+    public DataGenerater(RoleService roleService, UserService userService, ProjectService projectService) {
         this.roleService = roleService;
         this.userService = userService;
         this.projectService = projectService;
