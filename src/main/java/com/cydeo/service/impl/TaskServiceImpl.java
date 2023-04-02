@@ -45,7 +45,7 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO,Long> implements
 
     @Override
     public void deleteById(Long id) {
-     deleteById(id);
+     super.deleteById(id);
     }
 
     @Override
