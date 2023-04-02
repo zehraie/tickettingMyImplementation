@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.UUID;
 
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class TaskDTO {
@@ -19,7 +18,7 @@ public class TaskDTO {
     private String taskDetail;
     private Status taskStatus;
     private LocalDate assignedDate;
-
+// MANUALLY CREATE CONSTRUCTOR, id will be populated by db
     public TaskDTO(ProjectDTO project, UserDTO assignedEmployee, String taskSubject, String taskDetail, Status taskStatus, LocalDate assignedDate) {
         this.project = project;
         this.assignedEmployee = assignedEmployee;
