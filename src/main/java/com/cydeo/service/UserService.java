@@ -8,6 +8,8 @@ public interface UserService extends CrudService<UserDTO,String>{
 
     List<UserDTO> findManagers();
 
+    List<UserDTO> findEmployees();
+
 //   UserDTO save(UserDTO userDTO);
 //   UserDTO findById(String username);
 //   List<UserDTO> findAll();
